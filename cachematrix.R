@@ -1,5 +1,5 @@
-## Put comments here that give an overall description of what your
-## functions do
+## creates a spcieal matrix to cache the inverse value
+## input is a square invertible matrix
 
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
@@ -16,8 +16,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## calculates the inverse of a matrix using cached value if it exists
-## Return a matrix that is the inverse of 'x'
+## calculates the inverse of a matrix using the output from createCacheMatrix
+## if matrix has not changed and inverse is already calculated the cached value will be returned
+
 cacheSolve <- function(x, ...) {
     m <- x$getInverse()
     if(!is.null(m)) {
